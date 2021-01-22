@@ -129,7 +129,7 @@ int peInject(int processID) {
 	baseRelocation = (PIMAGE_BASE_RELOCATION)((LPBYTE)Buffer + ntHeader->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_BASERELOC].VirtualAddress);
 	if (!baseRelocation) {
 		printf(errorMessage.CANNOT_GET_IMAGE_BASE_RELOCATION);
-		return 0;
+		return -1;
 	}
 
 	DWORD_PTR delta, oldDelta;
