@@ -188,6 +188,7 @@ int peInject(int processID) {
 		return -1;
 	}
 
+	return 0;
 }
 
 int main(int argc, char* argv[])
@@ -205,7 +206,7 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
-	peInject(processID);
+	int result = peInject(processID);
 
-	return 0;
+	exit(result);
 }
